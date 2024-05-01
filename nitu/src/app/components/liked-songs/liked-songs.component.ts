@@ -21,6 +21,9 @@ interface Song{
   styleUrl: './liked-songs.component.css'
 })
 export class LikedSongsComponent implements OnInit {
+
+  first=true;
+  song:any;
   item: any;
   disabled = false;
   max = 1000;

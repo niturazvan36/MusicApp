@@ -22,6 +22,9 @@ interface Song{
   styleUrl: './library.component.css'
 })
 export class LibraryComponent {
+
+  first=true;
+  song:any;
   item: any;
   disabled = false;
   max = 1000;

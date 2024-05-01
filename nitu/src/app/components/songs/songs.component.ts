@@ -5,6 +5,8 @@ import { UserProfileComponent } from '../user-profile/user-profile.component';
 import { HttpClient } from '@angular/common/http';
 import { RequestsService } from '../../services/requests.service';
 import { CacheService } from '../../services/cache.service';
+import { SpotifyService } from '../../services/spotify.service';
+import { AuthService } from '../../services/auth.service';
 
 interface Song{
   img:string;
@@ -33,23 +35,29 @@ user:any;
   thumbLabel = false;
   value = 0;
 
+
+  first=true;
+  song:any;
 play_popular:number[] = [1, 0, 0, 0];
 songs:Song[] = [];
 
 liked:any[] = [];
 
 myList: string[] = [];
-  constructor(private route: ActivatedRoute,
+  constructor(private route: ActivatedRoute, 
+    private authService: AuthService,
     public dialog: MatDialog,
     private http:HttpClient,
     private spotifyService: RequestsService,
     private router: Router,
-    private cservice: CacheService) { }
+    private cservice: CacheService,
+    private spotify: SpotifyService) { }
 
   openDialog(){
     let dialogRef = this.dialog.open(UserProfileComponent, {width: '30%'})
   }
   ngOnInit(): void {
+
     this.item = this.route.snapshot.paramMap.get('item') || '';
     console.log(this.item)
 
@@ -100,5 +108,13 @@ myList: string[] = [];
     }, error => {
       console.error('Error adding item', error);
     });
+  }
+
+
+
+
+  play() {
+    const songUri = 'https://open.spotify.com/track/227N0C668UQBiN3T4HFzoQ'; // Replace with your desired song URI
+    this.spotify.playSong(songUri);
   }
 }

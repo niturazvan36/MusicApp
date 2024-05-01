@@ -9,9 +9,27 @@ resource "aws_db_instance" "licenta_db" {
   instance_class       = "db.t3.micro"
   db_name              = "mydb"
   username             = "admin"
-  password             = "silviucandale1234"
+  password             = ""
   parameter_group_name = "default.mysql8.0"
   skip_final_snapshot  = true
   publicly_accessible  = true
 
+}
+
+resource "aws_s3_bucket" "music_streaming_bucket" {
+  bucket = "musicstreamingapplicationnitu"  
+  acl    = "private"
+
+  tags = {
+    Name        = "MusicStreamingApplicationNitu"
+    Environment = "Production"
+  }
+}
+
+resource "aws_s3_bucket_versioning" "versioning" {
+  bucket = aws_s3_bucket.music_streaming_bucket.bucket
+
+  versioning_configuration {
+    status = "Enabled"
+  }
 }

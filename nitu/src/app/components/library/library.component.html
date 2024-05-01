@@ -145,8 +145,10 @@
 
       
       <div class="card" style="width: 18rem; margin: 10%; background-color: #C996CC; box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);">
-        <img [src]="demo_img" class="card-img-top" alt="pic" style="width:15rem; margin:7%; border-radius: 5px; border: 5px solid white; ">
-        <div class="card-body">
+        <img *ngIf="first===false" [src]="song?.img" class="card-img-top" alt="pic" style="width:15rem; margin:7%; border-radius: 5px; border: 5px solid white; ">
+      
+        <img *ngIf="first===true" src="../../../assets/images/lib.png" class="card-img-top" alt="pic" style="width:15rem; margin:7%; border-radius: 5px; border: 5px solid white; ">
+         <div class="card-body">
           <div class="row" style="margin-top:20px; margin-left:6%">
             <div class="col-md-auto">
               <i class="fa-solid fa-heart"></i>

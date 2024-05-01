@@ -22,6 +22,7 @@ import { LibraryComponent } from './components/library/library.component';
 import { SongsComponent } from './components/songs/songs.component';
 import { AddPlaylistComponent } from './components/add-playlist/add-playlist.component';
 import { PlaylistComponent } from './components/playlist/playlist.component';
+import { CallbackComponent } from './components/callback/callback.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { PlaylistComponent } from './components/playlist/playlist.component';
     SongsComponent,
     AddPlaylistComponent,
     PlaylistComponent,
+    CallbackComponent,
   ],
   imports: [
     BrowserModule,

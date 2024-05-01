@@ -5,6 +5,7 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
 import { MatDialog } from '@angular/material/dialog'
 import { RequestsService } from './services/requests.service';
 import { CacheService } from './services/cache.service';
+import { AuthService } from './services/auth.service';
 
 
 
@@ -26,10 +27,11 @@ export class AppComponent implements OnInit{
   logemail_login: any;
   constructor(private spotifyService: RequestsService,
     private router: Router,
-    private cservice: CacheService
+    private cservice: CacheService,
+    private authService: AuthService
   ) { }
   ngOnInit(): void {
-
+   // this.authService.login();
   }
   addItem() {
     this.spotifyService.addUser({ username: this.logname_register, email: this.logemail_register, password: this.logpass_register })

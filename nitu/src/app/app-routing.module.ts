@@ -11,6 +11,7 @@ import { FeedbackComponent } from './components/feedback/feedback.component';
 import { LibraryComponent } from './components/library/library.component';
 import { SongsComponent } from './components/songs/songs.component';
 import { PlaylistComponent } from './components/playlist/playlist.component';
+import { CallbackComponent } from './components/callback/callback.component';
 
 const routes: Routes = [
   //{ path: '', component: HomeComponent }
@@ -54,6 +55,7 @@ const routes: Routes = [
     path: 'library/:item', 
     component: PlaylistComponent 
   },
+  { path: 'callback', component: CallbackComponent },
 
 ];
 

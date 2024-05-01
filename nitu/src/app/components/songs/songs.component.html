@@ -56,7 +56,8 @@
             <i  style="font-size:20px;" class="fa-solid fa-backward"></i>
           </div>
           <div class="col-md-auto">
-            <i onclick="toggleAnimation()" style="font-size:30px; margin-top:-5px;" class="fa-solid fa-play"></i>
+            <!-- <i onclick="toggleAnimation()" style="font-size:30px; margin-top:-5px;" class="fa-solid fa-play"></i> -->
+            <i (click)="play()" style="font-size:30px; margin-top:-5px;" class="fa-solid fa-play"></i>
           </div>
           <div class="col-md-auto">
             <i  style="font-size:20px;" class="fa-solid fa-forward"></i>
@@ -147,7 +148,9 @@
 
         
         <div class="card" style="width: 18rem; margin: 10%; background-color: #C996CC; box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);">
-          <img [src]="" class="card-img-top" alt="pic" style="width:15rem; margin:7%; border-radius: 5px; border: 5px solid white; ">
+          <img *ngIf="first===false" [src]="song?.img" class="card-img-top" alt="pic" style="width:15rem; margin:7%; border-radius: 5px; border: 5px solid white; ">
+      
+          <img *ngIf="first===true" src="../../../assets/images/lib.png" class="card-img-top" alt="pic" style="width:15rem; margin:7%; border-radius: 5px; border: 5px solid white; ">
           <div class="card-body">
             <div class="row" style="margin-top:20px; margin-left:6%">
               <div class="col-md-auto">
@@ -157,6 +160,7 @@
                 <i  style="font-size:20px;" class="fa-solid fa-backward"></i>
               </div>
               <div class="col-md-auto">
+                <!-- <i onclick="toggleAnimation()" style="font-size:30px; margin-top:-5px;" class="fa-solid fa-play"></i> -->
                 <i onclick="toggleAnimation()" style="font-size:30px; margin-top:-5px;" class="fa-solid fa-play"></i>
               </div>
               <div class="col-md-auto">
