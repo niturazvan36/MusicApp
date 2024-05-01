@@ -26,14 +26,14 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let item of myList; let i=index" class="body-row">
+                    <tr *ngFor="let item of songs; let i=index" class="body-row">
                         <!-- <td scope="row" class="body-cell col-sm"><i class="fa-solid fa-heart" style="cursor: pointer; margin-left:15px"></i></td> -->
                         <td class="body-cell col-sm">
-  <img style="border-radius: 5px;" [src]="item.song_img" alt="p1img">
+  <img style="border-radius: 5px;" [src]="item.img" alt="p1img">
                         </td>
-                        <td class="body-cell col-md-6">{{item.song_name}}</td>
-                        <td class="body-cell col-md-3">{{item.song_album}}</td>
-                        <td class="body-cell col-md-3">{{item.song_length}}</td>
+                        <td class="body-cell col-md-6">{{item.name}}</td>
+                        <td class="body-cell col-md-3">{{item.album}}</td>
+                        <td class="body-cell col-md-3">{{item.time}}</td>
                     </tr>
                 </tbody>
             </table>
@@ -147,7 +147,7 @@
   
         
         <div class="card" style="width: 18rem; margin: 10%; background-color: #C996CC; box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);">
-          <img [src]="demo_img" class="card-img-top" alt="pic" style="width:15rem; margin:7%; border-radius: 5px; border: 5px solid white; ">
+          <img src="../../../assets/images/lib.png" class="card-img-top" alt="pic" style="width:15rem; margin:7%; border-radius: 5px; border: 5px solid white; ">
           <div class="card-body">
             <div class="row" style="margin-top:20px; margin-left:6%">
               <div class="col-md-auto">

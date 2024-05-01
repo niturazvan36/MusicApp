@@ -23,7 +23,11 @@ import { SongsComponent } from './components/songs/songs.component';
 import { AddPlaylistComponent } from './components/add-playlist/add-playlist.component';
 import { PlaylistComponent } from './components/playlist/playlist.component';
 import { CallbackComponent } from './components/callback/callback.component';
-
+import { LikeshowComponent } from './components/likeshow/likeshow.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToplaylistComponent } from './components/toplaylist/toplaylist.component';
+import {MatRadioModule} from '@angular/material/radio';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,9 +43,12 @@ import { CallbackComponent } from './components/callback/callback.component';
     AddPlaylistComponent,
     PlaylistComponent,
     CallbackComponent,
+    LikeshowComponent,
+    ToplaylistComponent,
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
     MatSliderModule,
@@ -50,7 +57,9 @@ import { CallbackComponent } from './components/callback/callback.component';
     FormsModule,
     MatFormFieldModule,
     MatCardModule,
-    RouterModule
+    RouterModule,
+    MatSnackBarModule,
+    MatRadioModule
   ],
   providers: [
     provideClientHydration(),

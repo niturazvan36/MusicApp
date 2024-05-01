@@ -17,3 +17,13 @@ a:hover {
     color: inherit;
     cursor: pointer;
 }
+
+img:hover{
+    cursor: pointer;
+}
+.fa-folder-plus, .fa-repeat, .fa-heart, .fa-backward, .fa-play, .fa-pause, .fa-forward{
+    cursor: pointer;
+}
+label {
+    color: whitesmoke; /* Ensures the label text is white */
+  }

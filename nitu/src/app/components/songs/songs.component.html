@@ -29,7 +29,7 @@
                     <tr *ngFor="let item of songs; let i=index" class="body-row">
                         <td (click)="likeSong(item)" scope="row" class="body-cell col-sm"><i class="fa-solid fa-heart" style="cursor: pointer; margin-left:15px;"></i></td>
                         <td class="body-cell col-sm">
-<img style="border-radius: 5px;" [src]="item.img" alt="p1img">
+<img (click)="playPopular(i)" style="border-radius: 5px;" [src]="item.img" alt="p1img">
                         </td>
                         <td class="body-cell col-md-6">{{item.name}}</td>
                         <td class="body-cell col-md-3">{{item.album}}</td>
@@ -49,7 +49,7 @@
             <i class="fa-solid fa-repeat"></i>
           </div>
           <div class="col-md-auto">
-            <i class="fa-solid fa-folder-plus"></i>
+            <i (click)="toPlaylist()" class="fa-solid fa-folder-plus"></i>
           </div>
           <div class="col-sm-2"></div>
           <div class="col-md-auto">
@@ -57,7 +57,8 @@
           </div>
           <div class="col-md-auto">
             <!-- <i onclick="toggleAnimation()" style="font-size:30px; margin-top:-5px;" class="fa-solid fa-play"></i> -->
-            <i (click)="play()" style="font-size:30px; margin-top:-5px;" class="fa-solid fa-play"></i>
+            <i *ngIf="played===false" (click)="play()" style="font-size:30px; margin-top:-5px;" class="fa-solid fa-play"></i>
+            <i *ngIf="played===true" (click)="play()" style="font-size:30px; margin-top:-5px;" class="fa-solid fa-pause"></i>
           </div>
           <div class="col-md-auto">
             <i  style="font-size:20px;" class="fa-solid fa-forward"></i>
@@ -161,7 +162,9 @@
               </div>
               <div class="col-md-auto">
                 <!-- <i onclick="toggleAnimation()" style="font-size:30px; margin-top:-5px;" class="fa-solid fa-play"></i> -->
-                <i onclick="toggleAnimation()" style="font-size:30px; margin-top:-5px;" class="fa-solid fa-play"></i>
+                <!-- <i onclick="toggleAnimation()" style="font-size:30px; margin-top:-5px;" class="fa-solid fa-play"></i> -->
+                <i *ngIf="played===false" (click)="play()" style="font-size:30px; margin-top:-5px;" class="fa-solid fa-play"></i>
+                <i *ngIf="played===true" (click)="play()" style="font-size:30px; margin-top:-5px;" class="fa-solid fa-pause"></i>
               </div>
               <div class="col-md-auto">
                 <i  style="font-size:20px;" class="fa-solid fa-forward"></i>

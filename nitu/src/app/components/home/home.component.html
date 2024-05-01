@@ -18,7 +18,8 @@
       
     </div>
     <div id="background-wrap" class="row" style="margin-top:30px; height: 125px; width: 900px; border-radius: 150px;">
-      <h2 style="position:fixed; margin-top:30px; margin-left:30px">NOW PLAYING</h2>
+      <h2 *ngIf="played===true" style="position:fixed; margin-top:30px; margin-left:30px">NOW PLAYING.. {{song.name}}</h2>
+      <h2 *ngIf="played===false" style="position:fixed; margin-top:30px; margin-left:30px">SELECT A SONG</h2>
       <img style="height: 125px; width: 900px; border-radius: 150px;" src="https://images3.alphacoders.com/966/966315.png">
       
       <div class="x1" id="cloudContainer">
