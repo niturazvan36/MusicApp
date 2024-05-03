@@ -43,4 +43,4 @@ jobs:
 
       - name: Deploy
         working-directory: rscript
-        run: bash ./deploy.sh
+        run: bash ./deploy.sh prod
