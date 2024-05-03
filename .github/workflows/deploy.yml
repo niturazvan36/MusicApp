@@ -38,9 +38,9 @@ jobs:
         working-directory: rscript
         run: python main.py
 
-      - name: Make deploy.sh executable
-        run: chmod +x deploy.sh
+      # - name: Make deploy.sh executable
+      #   run: chmod +x deploy.sh
 
       - name: Deploy
         working-directory: rscript
-        run: ./deploy.sh
+        run: bash ./deploy.sh
