@@ -25,6 +25,11 @@ echo "Deploying ..."
 rm -rf sls/dist/
 
 cd ../nitu
-ng build --configuration $ANGULAR_CONFIG
+# ng build --configuration $ANGULAR_CONFIG
 
-aws s3 sync dist/nitu/browser/ s3://nitu
+# aws s3 sync dist/nitu/browser/ s3://nitu
+
+sleep 10s
+
+echo "Successfully deployed"
+
