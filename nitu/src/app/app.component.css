@@ -55,12 +55,14 @@ https://colorhunt.co/palette/1c0c5b3d2c8d916bbfc996cc
   padding:15px;
   border-top-left-radius: 5px; 
   border-bottom-left-radius: 5px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 .popular-main-right{
   background-color: #C996CC;
   padding:15px;
   border-top-right-radius: 5px; 
   border-bottom-right-radius: 5px;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
 }
 .example-margin {
   margin-left:30px;

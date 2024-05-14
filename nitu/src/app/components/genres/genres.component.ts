@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './genres.component.css'
 })
 export class GenresComponent {
-
+  genres:string[] = ["Hip-Hop","Punk","Rock","Alternative","Indie","Latin","Classical","Jazz","Soul","Blues"];
 }

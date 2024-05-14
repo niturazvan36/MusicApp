@@ -1,12 +1,11 @@
 
-
 <div class="container left-nav">
   <div class="menu">
     <div class="row" style="margin-top:30px">
-      <i class="fa-solid fa-house menu-fa"></i>
+      <i style="cursor: pointer;" class="fa-solid fa-house menu-fa"></i>
       <i routerLink="/liked_songs" style="cursor: pointer;" class="fa-solid fa-heart-circle-check menu-fa"></i>
-      <i class="fa-solid fa-layer-group menu-fa"></i>
-      <i class="fa-solid fa-envelope menu-fa"></i>
+      <i style="cursor: pointer;" class="fa-solid fa-layer-group menu-fa"></i>
+      <i style="cursor: pointer;" class="fa-solid fa-envelope menu-fa"></i>
       <a target="_blank" href="https://github.com/niturazvan36/MusicApp"><i class="fa-brands fa-github menu-fa"></i></a>
       <i routerLink="/user" style="cursor: pointer;" class="fa-solid fa-user menu-fa"></i>
     </div>
@@ -152,12 +151,15 @@
   </div>
 </div>
 <div class="container right-nav">
+  <div class="row" style="margin-top:12%"></div>
   <h2 style="color:white; margin:5px">Find music by genre</h2>
   <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
     </div>
     <div class="carousel-inner" style="color:whitesmoke">
       <div class="carousel-item active" style="height: 100px; text-align: center;">
@@ -169,6 +171,12 @@
       <div class="carousel-item" style="height: 100px; text-align: center;" >
         <h3 style="margin-top:5%; cursor: pointer;">Rock</h3>
       </div>
+      <div class="carousel-item" style="height: 100px; text-align: center;">
+        <h3 style="margin-top:5%; cursor: pointer;">Alternative</h3>
+      </div>
+      <div class="carousel-item" style="height: 100px; text-align: center;" >
+        <h3 style="margin-top:5%; cursor: pointer;">Punk</h3>
+      </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -178,6 +186,30 @@
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
     </button>
+  </div>
+
+  <div class="card" style="width: 18rem; margin: 10%; background-color: #C996CC; box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);">
+    <img [src]="fanslikeList[0]?.img" class="card-img-top" alt="pic" style="width:15rem; margin:7%; border-radius: 5px; border: 5px solid white; ">
+    <div class="card-body">
+      <div class="row" style="margin-top:20px; margin-left:6%">
+        <div class="col-md-auto">
+          <i class="fa-solid fa-heart"></i>
+        </div>
+        <div class="col-md-auto">
+          <i  style="font-size:20px;" class="fa-solid fa-backward"></i>
+        </div>
+        <div class="col-md-auto">
+          <i onclick="toggleAnimation()" style="font-size:30px; margin-top:-5px;" class="fa-solid fa-play"></i>
+        </div>
+        <div class="col-md-auto">
+          <i  style="font-size:20px;" class="fa-solid fa-forward"></i>
+        </div>
+        <div class="col-md-auto">
+          <i class="fa-solid fa-repeat"></i>
+        </div>
+      </div>
+      
+    </div>
   </div>
 </div>
 
