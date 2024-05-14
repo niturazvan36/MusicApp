@@ -3,3 +3,17 @@ body{
  background-color: #1C0C5B;   
  margin: 0;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+a {
+    text-decoration: inherit;
+    color: inherit;
+    cursor: pointer;
+}
+
+a:hover {
+    text-decoration: inherit;
+    color: inherit;
+    cursor: pointer;
+}

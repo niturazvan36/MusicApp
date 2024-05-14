@@ -16,9 +16,29 @@ https://colorhunt.co/palette/1c0c5b3d2c8d916bbfc996cc
     overflow-x: hidden;
     padding-top: 20px;
     background-color: #3D2C8D;
-  }
+}
 
-  .menu {
+.right-nav {
+    height: 100%;
+    margin:0;
+    width: 25%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right:0;
+    overflow-x: hidden;
+    padding-top: 20px;
+    background-color: #3D2C8D;
+    content:'';
+}
+
+.center-nav{
+  margin-left:12%;
+  padding:2%;
+  color:whitesmoke;
+}
+
+.menu {
     height: 50%;
     z-index: 1;
     overflow-x: hidden;
@@ -26,4 +46,167 @@ https://colorhunt.co/palette/1c0c5b3d2c8d916bbfc996cc
     margin:20%;
     border-radius:50px;
     background-color: #916BBF;
+}
+
+
+
+.popular-main-left{
+  background-color: #C996CC;
+  padding:15px;
+  border-top-left-radius: 5px; 
+  border-bottom-left-radius: 5px;
+}
+.popular-main-right{
+  background-color: #C996CC;
+  padding:15px;
+  border-top-right-radius: 5px; 
+  border-bottom-right-radius: 5px;
+}
+.example-margin {
+  margin-left:30px;
+  margin-top:20px;
+  width:800px;
+}
+
+.menu-fa{
+  font-size:25px; 
+  margin:5px;
+  margin-top:10px
+}
+
+@-webkit-keyframes animateCloud {
+  0% {
+      margin-left: -100px;
   }
+  100% {
+      margin-left: 50%;
+  }
+}
+
+@-moz-keyframes animateCloud {
+  0% {
+      margin-left: -100px;
+  }
+  100% {
+      margin-left: 50%;
+  }
+}
+
+@keyframes animateCloud {
+  0% {
+      margin-left: -100px;
+  }
+  100% {
+      margin-left: 50%;
+  }
+}
+
+/* ANIMATIONS */
+
+.x1 {
+-webkit-animation: animateCloud 20s linear infinite;
+-moz-animation: animateCloud 20s linear infinite;
+animation: animateCloud 20s linear infinite;
+
+-webkit-transform: scale(0.65);
+-moz-transform: scale(0.65);
+transform: scale(0.65);
+}
+
+.x2 {
+-webkit-animation: animateCloud 30s linear infinite;
+-moz-animation: animateCloud 30s linear infinite;
+animation: animateCloud 30s linear infinite;
+
+-webkit-transform: scale(0.3);
+-moz-transform: scale(0.3);
+transform: scale(0.3);
+}
+
+.x3 {
+-webkit-animation: animateCloud 35s linear infinite;
+-moz-animation: animateCloud 35s linear infinite;
+animation: animateCloud 35s linear infinite;
+
+-webkit-transform: scale(0.5);
+-moz-transform: scale(0.5);
+transform: scale(0.5);
+}
+
+.x4 {
+-webkit-animation: animateCloud 45s linear infinite;
+-moz-animation: animateCloud 45s linear infinite;
+animation: animateCloud 45s linear infinite;
+
+-webkit-transform: scale(0.4);
+-moz-transform: scale(0.4);
+transform: scale(0.4);
+}
+
+.x5 {
+-webkit-animation: animateCloud 40s linear infinite;
+-moz-animation: animateCloud 40s linear infinite;
+animation: animateCloud 40s linear infinite;
+
+-webkit-transform: scale(0.55);
+-moz-transform: scale(0.55);
+transform: scale(0.55);
+}
+
+/* OBJECTS */
+
+.cloud {
+
+margin-top:-17%;
+
+opacity: 40%;
+background: #fff;
+background: -moz-linear-gradient(top,  #fff 5%, #f1f1f1 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(5%,#fff), color-stop(100%,#f1f1f1));
+background: -webkit-linear-gradient(top,  #fff 5%,#f1f1f1 100%);
+background: -o-linear-gradient(top,  #fff 5%,#f1f1f1 100%);
+background: -ms-linear-gradient(top,  #fff 5%,#f1f1f1 100%);
+background: linear-gradient(top,  #fff 5%,#f1f1f1 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff', endColorstr='#f1f1f1',GradientType=0 );
+
+-webkit-border-radius: 100px;
+-moz-border-radius: 100px;
+border-radius: 100px;
+
+-webkit-box-shadow: 0 8px 5px rgba(0, 0, 0, 0.1);
+-moz-box-shadow: 0 8px 5px rgba(0, 0, 0, 0.1);
+box-shadow: 0 8px 5px rgba(0, 0, 0, 0.1);
+
+height: 24px;
+position: relative;
+width: 70px;
+}
+
+.cloud:after, .cloud:before {
+  background: #fff;
+content: '';
+position: absolute;
+z-indeX: -1;
+}
+
+.cloud:after {
+-webkit-border-radius: 100px;
+-moz-border-radius: 100px;
+border-radius: 100px;
+
+height: 20px;
+left: 10px;
+top: -10px;
+width: 20px;
+}
+
+.cloud:before {
+-webkit-border-radius: 200px;
+-moz-border-radius: 200px;
+border-radius: 200px;
+
+width: 36px;
+height: 36px;
+right: 10px;
+top: -18px;
+}

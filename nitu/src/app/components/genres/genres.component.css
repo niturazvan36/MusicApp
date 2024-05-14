@@ -16,9 +16,9 @@ https://colorhunt.co/palette/1c0c5b3d2c8d916bbfc996cc
     overflow-x: hidden;
     padding-top: 20px;
     background-color: #3D2C8D;
-  }
+}
 
-  .menu {
+.menu {
     height: 50%;
     z-index: 1;
     overflow-x: hidden;
@@ -26,4 +26,10 @@ https://colorhunt.co/palette/1c0c5b3d2c8d916bbfc996cc
     margin:20%;
     border-radius:50px;
     background-color: #916BBF;
+}
+
+.menu-fa{
+    font-size:25px; 
+    margin:5px;
+    margin-top:10px
   }
