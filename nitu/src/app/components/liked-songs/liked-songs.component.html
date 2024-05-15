@@ -15,5 +15,29 @@
         <h3 style="color:white; margin:2%; margin-left:10%">
             List of liked songs...
         </h3>
+
+        <table class="table  table-hover" style="margin-left: 10%; width: 90%">
+          <thead class="thead" >
+            <tr>
+              <th scope="col" style="background-color: #916BBF;"></th>
+              <th scope="col" style="background-color: #916BBF;">Name</th>
+              <th scope="col" style="background-color: #916BBF;" >Album</th>
+              <th scope="col" style="background-color: #916BBF;">Length</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of likedSongs; let i=index">
+              <th scope="row" style="background-color: #916BBF;"><i class="fa-solid fa-heart" style=" cursor: pointer;"></i></th>
+              <td style="background-color: #916BBF;">Mark</td>
+              <td style="background-color: #916BBF;">Otto</td>
+              <td style="background-color: #916BBF;">mdo</td>
+            </tr>
+          </tbody>
+        </table>
     </div>
 </div>
+
+<!-- 
+
+  https://colorlib.com/wp/css3-table-templates/
+-->

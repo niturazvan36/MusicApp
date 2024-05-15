@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './liked-songs.component.css'
 })
 export class LikedSongsComponent {
-
+  likedSongs:string[] = ["Hip-Hop","Punk","Rock","Alternative","Indie","Latin","Classical","Jazz","Soul","Blues"];
 }
