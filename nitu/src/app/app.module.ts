@@ -17,6 +17,7 @@ import { ArtistProfileComponent } from './components/artist-profile/artist-profi
 import { LikedSongsComponent } from './components/liked-songs/liked-songs.component';
 import { EventsComponent } from './components/events/events.component';
 import { GenresComponent } from './components/genres/genres.component';
+import { FeedbackComponent } from './components/feedback/feedback.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { GenresComponent } from './components/genres/genres.component';
     ArtistProfileComponent,
     LikedSongsComponent,
     EventsComponent,
-    GenresComponent
+    GenresComponent,
+    FeedbackComponent
   ],
   imports: [
     BrowserModule,

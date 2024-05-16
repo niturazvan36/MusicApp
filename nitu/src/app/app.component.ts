@@ -1,6 +1,8 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, withDebugTracing } from '@angular/router';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { MatDialog } from '@angular/material/dialog'
 
 interface Popular{
   img:string;
@@ -34,7 +36,8 @@ popularList: Popular[] = [];
 fanslikeList: FansLike[] = [];
 play_popular:number[] = [1, 0, 0, 0];
   constructor(private http:HttpClient,
-    private router: Router) { }
+    private router: Router,
+  public dialog: MatDialog) { }
 
   ngOnInit(): void {
 
@@ -52,7 +55,7 @@ play_popular:number[] = [1, 0, 0, 0];
 
   addPopular(songId:string){
 
-    let api_key = "BQC9n1lrKj8LyEeyR3lfU-UNsVorvSwU7PZSoG71rWFjOTY8OckOB2Bin3X4B49ZrQwJIDR6mq_siOdS5cCPfJAb_-fAk7TtfonHjq5RyOVWuiW_XZg";
+    let api_key = "BQAS49xd0-gt_L8aQr0Be35D7Fbl132zXe1dFu3dTspz9Zu53Yfwd9PZqrgWLZrTu-fMSvZK2-tTeWywNaVi1xm2-0lqLADtG2Y0qQWCFs2ImBYqQ9A";
     const headers = new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${api_key}`
@@ -74,7 +77,7 @@ const requestOptions = { headers: headers };
 
   addFansLike(artistId:string){
 
-    let api_key = "BQC9n1lrKj8LyEeyR3lfU-UNsVorvSwU7PZSoG71rWFjOTY8OckOB2Bin3X4B49ZrQwJIDR6mq_siOdS5cCPfJAb_-fAk7TtfonHjq5RyOVWuiW_XZg";
+    let api_key = "BQAS49xd0-gt_L8aQr0Be35D7Fbl132zXe1dFu3dTspz9Zu53Yfwd9PZqrgWLZrTu-fMSvZK2-tTeWywNaVi1xm2-0lqLADtG2Y0qQWCFs2ImBYqQ9A";
     const headers = new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${api_key}`
@@ -102,5 +105,8 @@ const requestOptions = { headers: headers };
     this.router.navigate([path])
   }
 
-  
+ 
+openDialog(){
+  let dialogRef = this.dialog.open(UserProfileComponent, {width: '33%'})
+}
 }
