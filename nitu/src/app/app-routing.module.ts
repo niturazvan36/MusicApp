@@ -34,6 +34,10 @@ const routes: Routes = [
   {
     path:'feedback',
     component: FeedbackComponent
+  },
+  {
+    path:'home',
+    component: HomeComponent
   }
 
 ];

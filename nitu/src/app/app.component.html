@@ -1,215 +1,60 @@
 
-<div class="container left-nav">
-  <div class="menu">
-    <div class="row" style="margin-top:30px">
-      <i style="cursor: pointer;" class="fa-solid fa-house menu-fa"></i>
-      <i routerLink="/liked_songs" style="cursor: pointer;" class="fa-solid fa-heart-circle-check menu-fa"></i>
-      <i style="cursor: pointer;" class="fa-solid fa-layer-group menu-fa"></i>
-      <i routerLink="/feedback" style="cursor: pointer;" class="fa-solid fa-envelope menu-fa"></i>
-      <a target="_blank" href="https://github.com/niturazvan36/MusicApp"><i class="fa-brands fa-github menu-fa"></i></a>
-      <i (click)="openDialog()" style="cursor: pointer;" class="fa-solid fa-user menu-fa"></i>
-    </div>
-  </div>
-</div>
-<div class="container center-nav">
-  <div class="row">
-    <div routerLink="/genres" class="col-md-auto" style="cursor: pointer;">New Music</div>
-    <div style="cursor: pointer;" routerLink="/events" class="col-md-auto">Events</div>
-    <div class="col-md-auto">???</div>
-  </div>
-  <div id="background-wrap" class="row" style="margin-top:30px; height: 125px; width: 900px; border-radius: 150px;">
-    <h2 style="position:fixed; margin-top:30px; margin-left:30px">NOW PLAYING</h2>
-    <img style="height: 125px; width: 900px; border-radius: 150px;" src="https://images3.alphacoders.com/966/966315.png">
-    
-    <div class="x1" id="cloudContainer">
-        <div class="cloud"></div>
-    </div>
+<div class="test" style="top:0; left: 0; height: 100vh; width: 100vw; z-index:200; background-color: #1C0C5B; position: fixed; ">
+  <div class="container">
 
-    <div class="x2" id="cloudContainer">
-        <div class="cloud"></div>
-    </div>
-
-    <div class="x3" id="cloudContainer">
-        <div class="cloud"></div>
-    </div>
-
-    <div class="x4" id="cloudContainer">
-        <div class="cloud"></div>
-    </div>
-
-    <div class="x5" id="cloudContainer">
-        <div class="cloud"></div>
-    </div>
-    
-</div>
-
-  <!-- <div class="row" style="margin-top:30px">
-    <img style="height: 125px; width: 900px; border-radius: 150px;" src="https://images3.alphacoders.com/966/966315.png">
-  </div> -->
-
-  <div class="row" style="margin-top:30px">
-    <div class="col-md-auto" style="width:540px; margin-left:30px">
-      <div class="row">
-        <h2>Popular</h2>
-      </div>
-
-      <div *ngFor="let item of popularList; let i=index" class="row" style="margin:10px;">
-
-          <div *ngIf="play_popular[i]===1" class="col-md-auto popular-main-left" >
-            <img (click)="playPopular(i)" style="height:64px; width: 64px; border-radius: 5px; cursor: pointer;" [src]="item.img" alt="p1img">
+      <div class="section">
+          <div class="container">
+              <div class="row full-height justify-content-center">
+                  <div class="col-12 text-center align-self-center py-5">
+                      <div class="section pb-5 pt-5 pt-sm-2 text-center">
+                          <h6 class="mb-0 pb-3" style="color: white;"><span>Log In </span><span>Sign Up</span></h6>
+                            <input class="checkbox" type="checkbox" id="reg-log" name="reg-log"/>
+                            <label for="reg-log"></label>
+                          <div class="card-3d-wrap mx-auto">
+                              <div class="card-3d-wrapper">
+                                  <div class="card-front">
+                                      <div class="center-wrap">
+                                          <div class="section text-center">
+                                              <h4 class="mb-4 pb-3" style="color: white;">Log In</h4>
+                                              <div class="form-group">
+                                                  <input type="email" name="logemail" class="form-style" placeholder="Your Email" id="logemail" autocomplete="off">
+                                                  <i class="fa-solid fa-at input-icon uil uil-at"></i>
+                                              </div>	
+                                              <div class="form-group mt-2">
+                                                  <input type="password" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off">
+                                                  <i class="fa-solid fa-key input-icon uil uil-lock-alt"></i>
+                                              </div>
+                                              <a routerLink="/home" class="btn mt-4">Login</a>
+                                              </div>
+                                        </div>
+                                    </div>
+                                  <div class="card-back">
+                                      <div class="center-wrap">
+                                          <div class="section text-center">
+                                              <h4 class="mb-4 pb-3" style="color: white;">Sign Up</h4>
+                                              <div class="form-group">
+                                                  <input type="text" name="logname" class="form-style" placeholder="Your Username" id="logname" autocomplete="off">
+                                                  <i class="fa-solid fa-user input-icon uil uil-user"></i>
+                                              </div>
+                                              <div class="form-group mt-2">
+                                                  <input type="email" name="logemail" class="form-style" placeholder="Your Email" id="logemail" autocomplete="off">
+                                                  <i class="fa-solid fa-at input-icon uil uil-at"></i>
+                                              </div>	
+                                              <div class="form-group mt-2">
+                                                  <input type="password" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off">
+                                                  <i class="fa-solid fa-key input-icon uil uil-lock-alt"></i>
+                                              </div>
+                                              <a routerLink="/home" class="btn mt-4">Register</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
           </div>
-          <div *ngIf="play_popular[i]===0" class="col-md-auto" >
-            <img (click)="playPopular(i)" style="height:64px; width: 64px; border-radius: 5px; cursor: pointer;" [src]="item.img" alt="p1img">
-          </div>
-          <div  *ngIf="play_popular[i]===1" class="col-md-auto popular-main-right">
-            <h5>{{item.name}}</h5>
-            <h6>{{item.artist}}</h6>
-          </div>
-          <div *ngIf="play_popular[i]===0" class="col-md-auto">
-            <h5>{{item.name}}</h5>
-            <h6>{{item.artist}}</h6>
-          </div>
-
       </div>
-      
-    </div>
-
-    <div class="col-md-auto">
-      <div class="row">
-        <h2>Fans also like</h2>
-      </div>
-
-      <div *ngFor="let item of fanslikeList; let i=index" class="row" style="margin:10px;">
-        <div  class="col-md-auto" >
-          <img style="height:64px; width: 64px; border-radius: 150px;" [src]="item.img" alt="p1img">
-        </div>
-        
-        <div  class="col-md" >
-          <h5 style="margin-top:15px;">{{item.name}}</h5>
-        </div>
-
-        <div class="col-md-auto">
-          <i style="margin-top:20px" class="fa-solid fa-chevron-right"></i>
-        </div>
-
-      </div>
-    </div>
-  </div>
-  <div class="row" style="margin-top:20px; margin-left:5%">
-    <div class="col-md-auto">
-      <i class="fa-solid fa-heart"></i>
-    </div>
-    <div class="col-md-auto">
-      <i class="fa-solid fa-repeat"></i>
-    </div>
-    <div class="col-md-auto">
-      <i class="fa-solid fa-shuffle"></i>
-    </div>
-    <div class="col-sm-2"></div>
-    <div class="col-md-auto">
-      <i  style="font-size:20px;" class="fa-solid fa-backward"></i>
-    </div>
-    <div class="col-md-auto">
-      <i onclick="toggleAnimation()" style="font-size:30px; margin-top:-5px;" class="fa-solid fa-play"></i>
-    </div>
-    <div class="col-md-auto">
-      <i  style="font-size:20px;" class="fa-solid fa-forward"></i>
-    </div>
-    <div class="col-sm-1"></div>
-    <div class="col-md-auto">
-      <i class="fa-solid fa-volume-low"></i>
-    </div>
-    <div class="col-md-auto">
-      <mat-slider
-      style="width:15px; margin-top:-10px;"
-      [disabled]="disabled"
-      [max]="max"
-      [min]="min"
-      [step]="step"
-      [discrete]="thumbLabel"
-      [showTickMarks]="showTicks">
-    <input matSliderThumb [(ngModel)]="value" #slider>
-  </mat-slider>
-    </div>
-    <div class="col-md-auto">
-      <i style="margin-left:-15px" class="fa-solid fa-volume-high"></i>
-    </div>
-  </div>
-  <div class="row" style="margin-top:-30px">
-
-    <mat-slider
-        class="example-margin"
-        [disabled]="disabled"
-        [max]="max"
-        [min]="min"
-        [step]="step"
-        [discrete]="thumbLabel"
-        [showTickMarks]="showTicks">
-      <input matSliderThumb [(ngModel)]="value" #slider>
-    </mat-slider>
-
-  </div>
-</div>
-<div class="container right-nav">
-  <div class="row" style="margin-top:12%"></div>
-  <h2 style="color:white; margin:5px">Find music by genre</h2>
-  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
-    </div>
-    <div class="carousel-inner" style="color:whitesmoke">
-      <div class="carousel-item active" style="height: 100px; text-align: center;">
-        <h3 style="margin-top:5%; cursor: pointer;">Hip-Hop</h3>
-      </div>
-      <div class="carousel-item" style="height: 100px; text-align: center;">
-        <h3 style="margin-top:5%; cursor: pointer;">Pop</h3>
-      </div>
-      <div class="carousel-item" style="height: 100px; text-align: center;" >
-        <h3 style="margin-top:5%; cursor: pointer;">Rock</h3>
-      </div>
-      <div class="carousel-item" style="height: 100px; text-align: center;">
-        <h3 style="margin-top:5%; cursor: pointer;">Alternative</h3>
-      </div>
-      <div class="carousel-item" style="height: 100px; text-align: center;" >
-        <h3 style="margin-top:5%; cursor: pointer;">Punk</h3>
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-
-  <div class="card" style="width: 18rem; margin: 10%; background-color: #C996CC; box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);">
-    <img [src]="fanslikeList[0]?.img" class="card-img-top" alt="pic" style="width:15rem; margin:7%; border-radius: 5px; border: 5px solid white; ">
-    <div class="card-body">
-      <div class="row" style="margin-top:20px; margin-left:6%">
-        <div class="col-md-auto">
-          <i class="fa-solid fa-heart"></i>
-        </div>
-        <div class="col-md-auto">
-          <i  style="font-size:20px;" class="fa-solid fa-backward"></i>
-        </div>
-        <div class="col-md-auto">
-          <i onclick="toggleAnimation()" style="font-size:30px; margin-top:-5px;" class="fa-solid fa-play"></i>
-        </div>
-        <div class="col-md-auto">
-          <i  style="font-size:20px;" class="fa-solid fa-forward"></i>
-        </div>
-        <div class="col-md-auto">
-          <i class="fa-solid fa-repeat"></i>
-        </div>
-      </div>
-      
-    </div>
   </div>
 </div>
 

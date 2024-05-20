@@ -28,7 +28,7 @@ import { FeedbackComponent } from './components/feedback/feedback.component';
     LikedSongsComponent,
     EventsComponent,
     GenresComponent,
-    FeedbackComponent
+    FeedbackComponent,
   ],
   imports: [
     BrowserModule,
