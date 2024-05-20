@@ -3,11 +3,11 @@ import { MatDialog } from '@angular/material/dialog';
 import { UserProfileComponent } from '../user-profile/user-profile.component';
 
 @Component({
-  selector: 'app-events',
-  templateUrl: './events.component.html',
-  styleUrl: './events.component.css'
+  selector: 'app-library',
+  templateUrl: './library.component.html',
+  styleUrl: './library.component.css'
 })
-export class EventsComponent {
+export class LibraryComponent {
   constructor(public dialog: MatDialog) { }
   openDialog(){
     let dialogRef = this.dialog.open(UserProfileComponent, {width: '30%'})

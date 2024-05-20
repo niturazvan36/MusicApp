@@ -43,3 +43,51 @@ https://colorhunt.co/palette/1c0c5b3d2c8d916bbfc996cc
     margin: 0px auto;
     float: none;
 }
+.styled-table {
+    border-collapse: separate;
+    border-spacing: 0 5px; /* Adds space between rows */
+    opacity: 70%;
+    width: 100%;
+    border: none;
+}
+
+.header-cell {
+    background-color: #916BBF;
+    padding: 10px;
+}
+
+.body-row {
+    background-color: #916BBF;
+    border: none;
+    border-radius: 10px; /* Adds rounded corners to rows */
+    overflow: hidden; /* Ensures rounded corners are visible */
+    margin-bottom: 10px;
+}
+
+.body-cell {
+    padding: 10px;
+    border: none;
+}
+
+.body-row:hover {
+    background-color: #7D57A5; /* Adds a hover effect to the rows */
+}
+
+#style-1::-webkit-scrollbar-track
+{
+	border-radius: 10px;
+	background-color: transparent;
+}
+
+#style-1::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: transparent;
+}
+
+#style-1::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #3D2C8D;
+}

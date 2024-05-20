@@ -18,6 +18,7 @@ import { LikedSongsComponent } from './components/liked-songs/liked-songs.compon
 import { EventsComponent } from './components/events/events.component';
 import { GenresComponent } from './components/genres/genres.component';
 import { FeedbackComponent } from './components/feedback/feedback.component';
+import { LibraryComponent } from './components/library/library.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { FeedbackComponent } from './components/feedback/feedback.component';
     EventsComponent,
     GenresComponent,
     FeedbackComponent,
+    LibraryComponent,
   ],
   imports: [
     BrowserModule,

@@ -2,38 +2,39 @@
     <div class="container left-nav">
       <div class="menu">
         <div class="row" style="margin-top:30px">
-          <i  routerLink="/"style="cursor: pointer;" class="fa-solid fa-house menu-fa"></i>
+          <i routerLink="/home" style="cursor: pointer;" class="fa-solid fa-house menu-fa"></i>
           <i routerLink="/liked_songs" style="cursor: pointer;" class="fa-solid fa-heart-circle-check menu-fa"></i>
-          <i style="cursor: pointer;" class="fa-solid fa-layer-group menu-fa"></i>
+          <i routerLink="/library" style="cursor: pointer;" class="fa-solid fa-layer-group menu-fa"></i>
           <i routerLink="/feedback" style="cursor: pointer;" class="fa-solid fa-envelope menu-fa"></i>
           <a target="_blank" href="https://github.com/niturazvan36/MusicApp"><i class="fa-brands fa-github menu-fa"></i></a>
-          <i routerLink="/user" style="cursor: pointer;" class="fa-solid fa-user menu-fa"></i>
+          <i (click)="openDialog()" style="cursor: pointer;" class="fa-solid fa-user menu-fa"></i>
         </div>
       </div>
       </div>
-    <div class="container">
-        <h3 style="color:white; margin:2%; margin-left:10%">
-            List of liked songs...
-        </h3>
+      <!-- <h3 style="color:white; margin:2%; margin-left:10%">
+        List of liked songs...
+    </h3> -->
 
-        <table class="table  table-hover" style="margin-left: 10%; width: 90%">
-          <thead class="thead" >
+    <div class="container overflow-auto" style="height: 80vh; margin:5%" id="style-1">
+
+    <table class="styled-table table-hover" style="margin-left: 10%; width: 90%">
+        <thead class="thead">
             <tr>
-              <th scope="col" style="background-color: #916BBF;"></th>
-              <th scope="col" style="background-color: #916BBF;">Name</th>
-              <th scope="col" style="background-color: #916BBF;" >Album</th>
-              <th scope="col" style="background-color: #916BBF;">Length</th>
+                <th scope="col" class="header-cell"></th>
+                <th scope="col" class="header-cell">Name</th>
+                <th scope="col" class="header-cell">Album</th>
+                <th scope="col" class="header-cell">Length</th>
             </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let item of likedSongs; let i=index">
-              <th scope="row" style="background-color: #916BBF;"><i class="fa-solid fa-heart" style=" cursor: pointer;"></i></th>
-              <td style="background-color: #916BBF;">Song {{i}}</td>
-              <td style="background-color: #916BBF;">Album {{i}}</td>
-              <td style="background-color: #916BBF;">Length {{i}}</td>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of likedSongs; let i=index" class="body-row">
+                <th scope="row" class="body-cell"><i class="fa-solid fa-heart" style="cursor: pointer;"></i></th>
+                <td class="body-cell">Song {{i}}</td>
+                <td class="body-cell">Album {{i}}</td>
+                <td class="body-cell">Length {{i}}</td>
             </tr>
-          </tbody>
-        </table>
+        </tbody>
+    </table>
     </div>
 </div>
 

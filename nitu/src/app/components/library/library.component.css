@@ -1,0 +1,27 @@
+.left-nav {
+    height: 100%;
+    margin:0;
+    width: 10%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+    background-color: #3D2C8D;
+}
+
+.menu {
+    height: 50%;
+    z-index: 1;
+    overflow-x: hidden;
+    padding: 20px;
+    margin:20%;
+    border-radius:50px;
+    background-color: #916BBF;
+}
+
+.menu-fa{
+    font-size:25px; 
+    margin:5px;
+    margin-top:10px
+  }
