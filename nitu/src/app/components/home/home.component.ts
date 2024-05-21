@@ -52,7 +52,7 @@ play_popular:number[] = [1, 0, 0, 0];
 
   addPopular(songId:string){
 
-    let api_key = "BQB3WyD99E_zUxE998eg7PS8gzA9-Ksy1YtBRSQtMv6LWNkcd_hP7KxgyYst0BbN8u6LGYyl6X6-xJwni96-fMF4IklXvGKaGP4YZU-gop9iQ_9Zyb0";
+    let api_key = "BQDvuSJxzOeZKF5qZB20Gkoxia8r_Jr_7GZj1j4vqh2pdHqlNqgW93Q8fS23kone1ryjZZY7bmFtgeLLsouBUmDOuxuS8bUHTSbVhvvQqZFcPMOEocg";
     const headers = new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${api_key}`
@@ -74,7 +74,7 @@ const requestOptions = { headers: headers };
 
   addFansLike(artistId:string){
 
-    let api_key = "BQB3WyD99E_zUxE998eg7PS8gzA9-Ksy1YtBRSQtMv6LWNkcd_hP7KxgyYst0BbN8u6LGYyl6X6-xJwni96-fMF4IklXvGKaGP4YZU-gop9iQ_9Zyb0";
+    let api_key = "BQDvuSJxzOeZKF5qZB20Gkoxia8r_Jr_7GZj1j4vqh2pdHqlNqgW93Q8fS23kone1ryjZZY7bmFtgeLLsouBUmDOuxuS8bUHTSbVhvvQqZFcPMOEocg";
     const headers = new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${api_key}`

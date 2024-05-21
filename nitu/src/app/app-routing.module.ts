@@ -9,6 +9,7 @@ import { EventsComponent } from './components/events/events.component';
 import { GenresComponent } from './components/genres/genres.component';
 import { FeedbackComponent } from './components/feedback/feedback.component';
 import { LibraryComponent } from './components/library/library.component';
+import { SongsComponent } from './components/songs/songs.component';
 
 const routes: Routes = [
   //{ path: '', component: HomeComponent }
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path:'genres',
     component: GenresComponent
+  },
+  { 
+    path: 'genres/:item', 
+    component: SongsComponent 
   },
   {
     path:'feedback',
