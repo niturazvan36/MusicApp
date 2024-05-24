@@ -1,6 +1,18 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { UserProfileComponent } from '../user-profile/user-profile.component';
+import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router';
+import { RequestsService } from '../../services/requests.service';
+
+interface Song{
+  img:string;
+  name:string;
+  artist:string;
+  time:string;
+  album:string;
+}
+
 
 @Component({
   selector: 'app-liked-songs',
@@ -8,9 +20,23 @@ import { UserProfileComponent } from '../user-profile/user-profile.component';
   styleUrl: './liked-songs.component.css'
 })
 export class LikedSongsComponent {
-  constructor(public dialog: MatDialog) { }
+  item: any;
+  disabled = false;
+  max = 1000;
+  min = 0;
+  showTicks = false;
+  step = 1;
+  thumbLabel = false;
+  value = 0;
+
+play_popular:number[] = [1, 0, 0, 0];
+songs:Song[] = [];
+
+myList: string[] = [];
+  constructor(private route: ActivatedRoute,
+    public dialog: MatDialog,
+    private http:HttpClient,
+    private spotifyService: RequestsService) { }
   openDialog(){
     let dialogRef = this.dialog.open(UserProfileComponent, {width: '30%'})
-  }
-  likedSongs:string[] = ["Hip-Hop","Punk","Rock","Alternative","Indie","Latin","Classical","Jazz","Soul","Blues","Hip-Hop","Punk","Rock","Alternative","Indie","Latin","Classical","Jazz","Soul","Blues"];
-}
+  }}

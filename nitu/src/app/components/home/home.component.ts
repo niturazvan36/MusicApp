@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router, withDebugTracing } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog'
 import { UserProfileComponent } from '../user-profile/user-profile.component';
+import { subscribe } from 'diagnostics_channel';
+import { RequestsService } from '../../services/requests.service';
 
 interface Popular{
   img:string;
@@ -34,7 +36,8 @@ fanslikeList: FansLike[] = [];
 play_popular:number[] = [1, 0, 0, 0];
   constructor(private http:HttpClient,
     private router: Router,
-  public dialog: MatDialog) { }
+  public dialog: MatDialog,
+  private spotifyService: RequestsService) { }
 
   ngOnInit(): void {
 
@@ -51,16 +54,7 @@ play_popular:number[] = [1, 0, 0, 0];
   title = 'nitu';
 
   addPopular(songId:string){
-
-    let api_key = "BQDvuSJxzOeZKF5qZB20Gkoxia8r_Jr_7GZj1j4vqh2pdHqlNqgW93Q8fS23kone1ryjZZY7bmFtgeLLsouBUmDOuxuS8bUHTSbVhvvQqZFcPMOEocg";
-    const headers = new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${api_key}`
-      });
-
-const requestOptions = { headers: headers };
-
-    this.http.get('https://api.spotify.com/v1/tracks/'+songId+'?market=RO', requestOptions)
+this.spotifyService.getTrack(songId)
     .subscribe((res: any) => {
       let popular: Popular = {
         img:res.album.images[2].url,
@@ -74,15 +68,8 @@ const requestOptions = { headers: headers };
 
   addFansLike(artistId:string){
 
-    let api_key = "BQDvuSJxzOeZKF5qZB20Gkoxia8r_Jr_7GZj1j4vqh2pdHqlNqgW93Q8fS23kone1ryjZZY7bmFtgeLLsouBUmDOuxuS8bUHTSbVhvvQqZFcPMOEocg";
-    const headers = new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${api_key}`
-      });
 
-const requestOptions = { headers: headers };
-
-    this.http.get('https://api.spotify.com/v1/artists/'+artistId, requestOptions)
+    this.spotifyService.getArtist(artistId)
     .subscribe((res: any) => {
       let fanslike: FansLike = {
         img:res.images[2].url,

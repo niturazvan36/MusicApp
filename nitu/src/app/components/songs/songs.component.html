@@ -18,18 +18,22 @@
             <table class="styled-table table-hover" style="width: 70%">
                 <thead class="thead">
                     <tr>
-                        <th scope="col" class="header-cell"></th>
-                        <th scope="col" class="header-cell">Name</th>
-                        <th scope="col" class="header-cell">Album</th>
-                        <th scope="col" class="header-cell">Length</th>
+                        <th scope="col" class="header-cell col-sm"></th>
+                        <th scope="col" class="header-cell col-sm"></th>
+                        <th scope="col" class="header-cell col-md-6">Name</th>
+                        <th scope="col" class="header-cell col-md-3">Album</th>
+                        <th scope="col" class="header-cell col-md-3">Length</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let item of likedSongs; let i=index" class="body-row">
-                        <th scope="row" class="body-cell"><i class="fa-solid fa-heart" style="cursor: pointer;"></i></th>
-                        <td class="body-cell">Song {{i}}</td>
-                        <td class="body-cell">Album {{i}}</td>
-                        <td class="body-cell">Length {{i}}</td>
+                    <tr *ngFor="let item of songs; let i=index" class="body-row">
+                        <td scope="row" class="body-cell col-sm"><i class="fa-solid fa-heart" style="cursor: pointer; margin-left:15px"></i></td>
+                        <td class="body-cell col-sm">
+<img style="border-radius: 5px;" [src]="item.img" alt="p1img">
+                        </td>
+                        <td class="body-cell col-md-6">{{item.name}}</td>
+                        <td class="body-cell col-md-3">{{item.album}}</td>
+                        <td class="body-cell col-md-3">{{item.time}}</td>
                     </tr>
                 </tbody>
             </table>
