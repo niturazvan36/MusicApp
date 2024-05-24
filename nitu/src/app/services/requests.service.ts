@@ -73,4 +73,15 @@ export class RequestsService {
       );
     });
   }
+
+
+  private apiUrl = 'http://localhost:3000';
+
+  addUser(item: { username: string; email: string; password: string }): Observable<any> {
+    return this.http.post(`${this.apiUrl}/register-user`, item);
+  }
+
+  getUser(item2: { email: string; password: string }): Observable<any> {
+    return this.http.post(`${this.apiUrl}/login`, item2);
+  }
 }

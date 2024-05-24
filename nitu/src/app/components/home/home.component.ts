@@ -5,6 +5,7 @@ import { MatDialog } from '@angular/material/dialog'
 import { UserProfileComponent } from '../user-profile/user-profile.component';
 import { subscribe } from 'diagnostics_channel';
 import { RequestsService } from '../../services/requests.service';
+import { CacheService } from '../../services/cache.service';
 
 interface Popular{
   img:string;
@@ -37,9 +38,11 @@ play_popular:number[] = [1, 0, 0, 0];
   constructor(private http:HttpClient,
     private router: Router,
   public dialog: MatDialog,
-  private spotifyService: RequestsService) { }
+  private spotifyService: RequestsService,
+  ) { }
 
   ngOnInit(): void {
+   
 
     this.addPopular('7iAqvWLgZzXvH38lA06QZg')
     this.addPopular('0SiywuOBRcynK0uKGWdCnn')

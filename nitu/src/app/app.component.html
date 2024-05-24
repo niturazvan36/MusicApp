@@ -17,14 +17,14 @@
                                           <div class="section text-center">
                                               <h4 class="mb-4 pb-3" style="color: white;">Log In</h4>
                                               <div class="form-group">
-                                                  <input type="email" name="logemail" class="form-style" placeholder="Your Email" id="logemail" autocomplete="off">
+                                                  <input [(ngModel)]="logemail_login" type="email" name="logemail_login" class="form-style" placeholder="Your Email" id="logemail_login" autocomplete="off">
                                                   <i class="fa-solid fa-at input-icon uil uil-at"></i>
                                               </div>	
                                               <div class="form-group mt-2">
-                                                  <input type="password" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off">
+                                                  <input [(ngModel)]="logpass_login" type="password" name="logpass_login" class="form-style" placeholder="Your Password" id="logpass_login" autocomplete="off">
                                                   <i class="fa-solid fa-key input-icon uil uil-lock-alt"></i>
                                               </div>
-                                              <a routerLink="/home" class="btn mt-4">Login</a>
+                                              <a (click)="checkUser()" class="btn mt-4">Login</a>
                                               </div>
                                         </div>
                                     </div>
@@ -33,18 +33,18 @@
                                           <div class="section text-center">
                                               <h4 class="mb-4 pb-3" style="color: white;">Sign Up</h4>
                                               <div class="form-group">
-                                                  <input type="text" name="logname" class="form-style" placeholder="Your Username" id="logname" autocomplete="off">
+                                                  <input [(ngModel)]="logname_register"  type="text" name="logname_register" class="form-style" placeholder="Your Username" id="logname_register" autocomplete="off">
                                                   <i class="fa-solid fa-user input-icon uil uil-user"></i>
                                               </div>
                                               <div class="form-group mt-2">
-                                                  <input type="email" name="logemail" class="form-style" placeholder="Your Email" id="logemail" autocomplete="off">
+                                                  <input [(ngModel)]="logemail_register"  type="email" name="logemail_register" class="form-style" placeholder="Your Email" id="logemail_register" autocomplete="off">
                                                   <i class="fa-solid fa-at input-icon uil uil-at"></i>
                                               </div>	
                                               <div class="form-group mt-2">
-                                                  <input type="password" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off">
+                                                  <input [(ngModel)]="logpass_register"  type="password" name="logpass_register" class="form-style" placeholder="Your Password" id="logpass_register" autocomplete="off">
                                                   <i class="fa-solid fa-key input-icon uil uil-lock-alt"></i>
                                               </div>
-                                              <a routerLink="/home" class="btn mt-4">Register</a>
+                                              <a (click)="addItem()" class="btn mt-4">Register</a>
                                             </div>
                                         </div>
                                     </div>
