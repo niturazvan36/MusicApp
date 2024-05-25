@@ -84,4 +84,12 @@ export class RequestsService {
   getUser(item2: { email: string; password: string }): Observable<any> {
     return this.http.post(`${this.apiUrl}/login`, item2);
   }
+
+  likeSong(item3: { username: string; song_name: string; song_album: string; song_img: string; song_length: string; }): Observable<any> {
+    return this.http.post(`${this.apiUrl}/like-song`, item3);
+  }
+  
+  getLikedSongs(item4: { username: string;  }): Observable<any> {
+    return this.http.post(`${this.apiUrl}/get-liked-songs`, item4);
+  }
 }

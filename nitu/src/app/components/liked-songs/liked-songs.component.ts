@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { UserProfileComponent } from '../user-profile/user-profile.component';
 import { HttpClient } from '@angular/common/http';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { RequestsService } from '../../services/requests.service';
+import { CacheService } from '../../services/cache.service';
 
 interface Song{
   img:string;
@@ -19,7 +20,7 @@ interface Song{
   templateUrl: './liked-songs.component.html',
   styleUrl: './liked-songs.component.css'
 })
-export class LikedSongsComponent {
+export class LikedSongsComponent implements OnInit {
   item: any;
   disabled = false;
   max = 1000;
@@ -30,13 +31,40 @@ export class LikedSongsComponent {
   value = 0;
 
 play_popular:number[] = [1, 0, 0, 0];
-songs:Song[] = [];
+songs:any[] = [];
 
-myList: string[] = [];
+
+user:any;
+
+myList: any[] = [];
+
   constructor(private route: ActivatedRoute,
     public dialog: MatDialog,
-    private http:HttpClient,
-    private spotifyService: RequestsService) { }
+    private spotifyService: RequestsService,
+    private router: Router,
+    private cservice: CacheService) { }
+  ngOnInit(): void {
+
+    this.user = this.cservice.getItem('user');
+    this.getLikedSongs(this.user.username)
+  }
   openDialog(){
     let dialogRef = this.dialog.open(UserProfileComponent, {width: '30%'})
-  }}
+  }
+  getLikedSongs(username:string){
+    
+
+    this.spotifyService.getLikedSongs({ username: this.user.username})
+    .subscribe(response => {
+        console.log(response)
+        this.songs = response.songs;
+        
+        for (let index = 0; index < this.songs.length; index++) 
+          this.myList.push( this.songs[index])
+
+    }, error => {
+      console.error('Error adding item', error);
+    });
+  }
+
+}
