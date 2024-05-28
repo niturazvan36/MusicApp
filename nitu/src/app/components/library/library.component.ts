@@ -21,7 +21,7 @@ interface Song{
   templateUrl: './library.component.html',
   styleUrl: './library.component.css'
 })
-export class LibraryComponent implements OnInit {
+export class LibraryComponent {
   item: any;
   disabled = false;
   max = 1000;
@@ -39,7 +39,7 @@ songs:any[] = [];
 genres:number[] = [1, 0, 0, 0,1, 0, 0, 0,1, 0, 0, 0];
 user:any;
 
-playlist:any[] = [];
+playlist:any[] = ['test','doi'];
 
 myList: any[] = [];
 
@@ -48,9 +48,9 @@ myList: any[] = [];
     private spotifyService: RequestsService,
     private router: Router,
     private cservice: CacheService) { }
-  ngOnInit(): void {
+  // ngOnInit(): void {
 
-  }
+  // }
   openDialog(){
     let dialogRef = this.dialog.open(UserProfileComponent, {width: '30%'})
   }
@@ -62,5 +62,9 @@ myList: any[] = [];
       console.log(res)
       this.playlist.push(res.data)
     })
+  }
+
+  openPlaylist(item: string) {
+    this.router.navigate(['/library', item]);
   }
 }

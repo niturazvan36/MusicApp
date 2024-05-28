@@ -21,6 +21,7 @@ import { FeedbackComponent } from './components/feedback/feedback.component';
 import { LibraryComponent } from './components/library/library.component';
 import { SongsComponent } from './components/songs/songs.component';
 import { AddPlaylistComponent } from './components/add-playlist/add-playlist.component';
+import { PlaylistComponent } from './components/playlist/playlist.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { AddPlaylistComponent } from './components/add-playlist/add-playlist.com
     LibraryComponent,
     SongsComponent,
     AddPlaylistComponent,
+    PlaylistComponent,
   ],
   imports: [
     BrowserModule,

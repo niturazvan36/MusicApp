@@ -10,6 +10,7 @@ import { GenresComponent } from './components/genres/genres.component';
 import { FeedbackComponent } from './components/feedback/feedback.component';
 import { LibraryComponent } from './components/library/library.component';
 import { SongsComponent } from './components/songs/songs.component';
+import { PlaylistComponent } from './components/playlist/playlist.component';
 
 const routes: Routes = [
   //{ path: '', component: HomeComponent }
@@ -44,12 +45,15 @@ const routes: Routes = [
   {
     path:'home',
     component: HomeComponent
-  }
-  ,
+  },
   {
     path:'library',
     component: LibraryComponent
-  }
+  },
+  { 
+    path: 'library/:item', 
+    component: PlaylistComponent 
+  },
 
 ];
 
