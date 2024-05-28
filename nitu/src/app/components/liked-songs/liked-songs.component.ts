@@ -30,6 +30,8 @@ export class LikedSongsComponent implements OnInit {
   thumbLabel = false;
   value = 0;
 
+  demo_img:any;
+
 play_popular:number[] = [1, 0, 0, 0];
 songs:any[] = [];
 
@@ -60,7 +62,12 @@ myList: any[] = [];
         this.songs = response.songs;
         
         for (let index = 0; index < this.songs.length; index++) 
-          this.myList.push( this.songs[index])
+          {
+            this.myList.push( this.songs[index])
+            this.demo_img = this.songs[4].song_img
+          }
+          
+
 
     }, error => {
       console.error('Error adding item', error);

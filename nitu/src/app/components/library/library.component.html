@@ -1,19 +1,171 @@
 <div class="test" style="top:0; left: 0; height: 100vh; width: 100vw; z-index:200; background-color: #1C0C5B; position: fixed;">
-    <div class="container left-nav">
-      <div class="menu">
-        <div class="row" style="margin-top:30px">
-          <i routerLink="/home" style="cursor: pointer;" class="fa-solid fa-house menu-fa"></i>
-          <i routerLink="/liked_songs" style="cursor: pointer;" class="fa-solid fa-heart-circle-check menu-fa"></i>
-          <i routerLink="/library" style="cursor: pointer;" class="fa-solid fa-layer-group menu-fa"></i>
-          <i routerLink="/feedback" style="cursor: pointer;" class="fa-solid fa-envelope menu-fa"></i>
-          <a target="_blank" href="https://github.com/niturazvan36/MusicApp"><i class="fa-brands fa-github menu-fa"></i></a>
-          <i (click)="openDialog()" style="cursor: pointer;" class="fa-solid fa-user menu-fa"></i>
+  <div class="container left-nav">
+    <div class="menu">
+      <div class="row" style="margin-top:30px">
+        <i routerLink="/home" style="cursor: pointer;" class="fa-solid fa-house menu-fa"></i>
+        <i routerLink="/liked_songs" style="cursor: pointer;" class="fa-solid fa-heart-circle-check menu-fa"></i>
+        <i routerLink="/library" style="cursor: pointer;" class="fa-solid fa-layer-group menu-fa"></i>
+        <i routerLink="/feedback" style="cursor: pointer;" class="fa-solid fa-envelope menu-fa"></i>
+        <a target="_blank" href="https://github.com/niturazvan36/MusicApp"><i class="fa-brands fa-github menu-fa"></i></a>
+        <i (click)="openDialog()" style="cursor: pointer;" class="fa-solid fa-user menu-fa"></i>
+      </div>
+    </div>
+    </div>
+
+  <div class="container center-nav ">
+    <div class="container overflow-auto" style="width: 900px; height:570px; margin-left:5%">
+      <div class="row">
+        <div class="col-md-auto" style="margin-bottom: 10px; cursor: pointer;  width: 12rem;">
+          <div (click)="addPlaylist()" class="card" style="height: 12rem; background-color: #C996CC; color:white; box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);">
+            <img src="../../../assets/images/libplus.png" class="card-img-top" style="margin-left:10%; margin-top:5%; width: 8rem;">
+            <div class="card-body" style="text-align: center;">
+              <p class="card-text">Create playlist</p>
+            </div>
+          </div>
+        </div>
+    
+        <div class="col-md-auto" *ngFor="let item of playlist; let i=index" style="margin-bottom: 10px; cursor: pointer;  width: 12rem;">
+          <div class="card" style="height: 12rem; background-color: #C996CC; color:white; box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);">
+            <img src="../../../assets/images/lib.png" class="card-img-top" style="margin-left:10%; margin-top:5%; width: 8rem;">
+            <div class="card-body" style="text-align: center;">
+              <p class="card-text">{{item}}</p>
+            </div>
+          </div>
         </div>
       </div>
+    </div>
+    
+    
+
+
+
+      <div class="row" style="margin-top:20px; margin-left:5%">
+        <div class="col-md-auto">
+          <i class="fa-solid fa-heart"></i>
+        </div>
+        <div class="col-md-auto">
+          <i class="fa-solid fa-repeat"></i>
+        </div>
+        <div class="col-md-auto">
+          <i class="fa-solid fa-folder-plus"></i>
+        </div>
+        <div class="col-sm-2"></div>
+        <div class="col-md-auto">
+          <i  style="font-size:20px;" class="fa-solid fa-backward"></i>
+        </div>
+        <div class="col-md-auto">
+          <i onclick="toggleAnimation()" style="font-size:30px; margin-top:-5px;" class="fa-solid fa-play"></i>
+        </div>
+        <div class="col-md-auto">
+          <i  style="font-size:20px;" class="fa-solid fa-forward"></i>
+        </div>
+        <div class="col-sm-1"></div>
+        <div class="col-md-auto">
+          <i class="fa-solid fa-volume-low"></i>
+        </div>
+        <div class="col-md-auto">
+          <mat-slider
+          style="width:15px; margin-top:-10px;"
+          [disabled]="disabled"
+          [max]="max"
+          [min]="min"
+          [step]="step"
+          [discrete]="thumbLabel"
+          [showTickMarks]="showTicks">
+        <input matSliderThumb [(ngModel)]="value" #slider>
+      </mat-slider>
+        </div>
+        <div class="col-md-auto">
+          <i style="margin-left:-15px" class="fa-solid fa-volume-high"></i>
+        </div>
       </div>
-    <div class="container">
-        <h3 style="color:white; margin:2%; margin-left:10%">
-            lib to be announced
-        </h3>
+      <div class="row" style="margin-top:-30px">
+    
+        <mat-slider
+            class="example-margin"
+            [disabled]="disabled"
+            [max]="max"
+            [min]="min"
+            [step]="step"
+            [discrete]="thumbLabel"
+            [showTickMarks]="showTicks">
+          <input matSliderThumb [(ngModel)]="value" #slider>
+        </mat-slider>
+    
+      </div>
+  
+      
+    </div>
+
+
+
+
+  
+  <div class="container right-nav">
+      <div class="row" style="margin-top:12%"></div>
+      <h2 style="color:white; margin:5px">Find music by genre</h2>
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+        </div>
+        <div class="carousel-inner" style="color:whitesmoke">
+          <div class="carousel-item active" style="height: 100px; text-align: center;">
+            <h3 style="margin-top:5%; cursor: pointer;">Hip-Hop</h3>
+          </div>
+          <div class="carousel-item" style="height: 100px; text-align: center;">
+            <h3 style="margin-top:5%; cursor: pointer;">Pop</h3>
+          </div>
+          <div class="carousel-item" style="height: 100px; text-align: center;" >
+            <h3 style="margin-top:5%; cursor: pointer;">Rock</h3>
+          </div>
+          <div class="carousel-item" style="height: 100px; text-align: center;">
+            <h3 style="margin-top:5%; cursor: pointer;">Alternative</h3>
+          </div>
+          <div class="carousel-item" style="height: 100px; text-align: center;" >
+            <h3 style="margin-top:5%; cursor: pointer;">Punk</h3>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    
+
+
+
+
+      
+      <div class="card" style="width: 18rem; margin: 10%; background-color: #C996CC; box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);">
+        <img [src]="demo_img" class="card-img-top" alt="pic" style="width:15rem; margin:7%; border-radius: 5px; border: 5px solid white; ">
+        <div class="card-body">
+          <div class="row" style="margin-top:20px; margin-left:6%">
+            <div class="col-md-auto">
+              <i class="fa-solid fa-heart"></i>
+            </div>
+            <div class="col-md-auto">
+              <i  style="font-size:20px;" class="fa-solid fa-backward"></i>
+            </div>
+            <div class="col-md-auto">
+              <i onclick="toggleAnimation()" style="font-size:30px; margin-top:-5px;" class="fa-solid fa-play"></i>
+            </div>
+            <div class="col-md-auto">
+              <i  style="font-size:20px;" class="fa-solid fa-forward"></i>
+            </div>
+            <div class="col-md-auto">
+              <i class="fa-solid fa-repeat"></i>
+            </div>
+          </div>
+          
+        </div>
+      </div>
     </div>
 </div>

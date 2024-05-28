@@ -1,0 +1,13 @@
+<div class="container" style="background-color: #3D2C8D; padding: 10%;">
+    <form>
+        <h1 class="title text-center mb-4" style="color: white; font-family: Quicksand">Create playlist</h1>
+    
+        <div class="form-group position-relative" style="margin-top:2%;">
+            <input [(ngModel)]="playlistName" name="playlistName" type="text" id="playlistName" class="form-control form-control-lg thick" placeholder="Playlist Name">
+        </div>
+
+        <div class="text-center" style="margin-top:10%;">
+            <button  (click)="confirm()" type="submit" class="btn btn-primary" tabIndex="-1">Create playlist</button>
+        </div>
+    </form>
+</div>
