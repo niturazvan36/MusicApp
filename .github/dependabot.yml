@@ -6,6 +6,7 @@
 version: 2
 updates:
   - package-ecosystem: "gomod"
+    vendor: true
     directory: /
     schedule:
       interval: "weekly"
@@ -23,4 +24,4 @@ updates:
         separator: "-"
     reviewers:
       - "my-git-uname"
-    vendor: true
+
