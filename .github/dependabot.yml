@@ -5,7 +5,8 @@
 
 version: 2
 updates:
-  - package-ecosystem: "gomod"
+  - package-ecosystem: gomod
+    vendor: true
     directory: /
     schedule:
       interval: "weekly"
